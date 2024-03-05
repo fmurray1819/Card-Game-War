@@ -8,20 +8,12 @@ public class Card : MonoBehaviour
 {
     public Card_data data;
 
-    public string card_name;
-    public string description;
-    public int health;
-    public int cost;
-    public int damage;
-    public Sprite sprite;
-    public TextMeshProUGUI nameText;
-    public TextMeshProUGUI descriptionText;
-    public TextMeshProUGUI healthText;
-    public TextMeshProUGUI costText;
-    public TextMeshProUGUI damageText;
-    public Image spriteImage;
+    public Sprite Number;
+    public Sprite Suit;
+    public int value;
+    public Image NumberImage;
+    public Image SuitImage;
         
-
     // Start is called before the first frame update
     void Start()
     {
