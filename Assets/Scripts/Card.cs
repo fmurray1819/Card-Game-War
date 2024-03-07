@@ -9,15 +9,18 @@ public class Card : MonoBehaviour
     public Card_data data;
 
     public Sprite Number;
+    public Sprite NumberTwo;
     public Sprite Suit;
     public int value;
     public Image NumberImage;
+    public Image NumberTwoImage;
     public Image SuitImage;
         
     // Start is called before the first frame update
     void Start()
     {
         NumberImage.sprite = Number;
+        NumberTwoImage.sprite = NumberTwo;
         SuitImage.sprite = Suit;
         value = data.value;
         

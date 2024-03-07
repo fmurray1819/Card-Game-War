@@ -7,6 +7,7 @@ public class Card_data : ScriptableObject
 {
     
     public Sprite Number;
+    public Sprite Number2;
     public Sprite Suit;
     public int value;
   
