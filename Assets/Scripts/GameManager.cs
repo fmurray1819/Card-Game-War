@@ -24,34 +24,51 @@ public class GameManager : MonoBehaviour
             DontDestroyOnLoad(this.gameObject);
         }
     }
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        CreateDeck();
+        Shuffle(deck);
+        Deal();
     }
 
-    // Update is called once per frame
-    void Update()
+    void CreateDeck()
     {
-        
+        // Populate the deck with cards
+        // You should implement your logic to create the deck here
+    }
+
+    void Shuffle(List<Card> deckToShuffle)
+    {
+        for (int i = 0; i < deckToShuffle.Count; i++)
+        {
+            Card temp = deckToShuffle[i];
+            int randomIndex = Random.Range(i, deckToShuffle.Count);
+            deckToShuffle[i] = deckToShuffle[randomIndex];
+            deckToShuffle[randomIndex] = temp;
+        }
     }
 
     void Deal()
     {
-
-    }
-
-    void Shuffle()
-    {
-
+        for (int i = 0; i < 5; i++) // Deal 5 cards to each player
+        {
+            if (deck.Count > 0)
+            {
+                player_hand.Add(deck[0]);
+                deck.RemoveAt(0);
+            }
+            if (deck.Count > 0)
+            {
+                ai_hand.Add(deck[0]);
+                deck.RemoveAt(0);
+            }
+        }
     }
 
     void AI_Turn()
     {
-
+        // Implement AI's turn logic here
     }
-
-
-
-    
 }
