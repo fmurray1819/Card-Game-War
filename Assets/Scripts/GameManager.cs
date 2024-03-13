@@ -27,25 +27,45 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+<<<<<<< HEAD
         // Shuffle the deck
         Shuffle();
 
         // Deal cards to players
+=======
+        CreateDeck();
+        Shuffle(deck);
+>>>>>>> 9d83a41175257c2e42b54522e2f1976e53ea4b44
         Deal();
     }
 
-    // Update is called once per frame
-    void Update()
+    void CreateDeck()
     {
+<<<<<<< HEAD
         // Check for the spacebar input
         if (Input.GetKeyDown(KeyCode.Space))
         {
             Play();
+=======
+        // Populate the deck with cards
+        // You should implement your logic to create the deck here
+    }
+
+    void Shuffle(List<Card> deckToShuffle)
+    {
+        for (int i = 0; i < deckToShuffle.Count; i++)
+        {
+            Card temp = deckToShuffle[i];
+            int randomIndex = Random.Range(i, deckToShuffle.Count);
+            deckToShuffle[i] = deckToShuffle[randomIndex];
+            deckToShuffle[randomIndex] = temp;
+>>>>>>> 9d83a41175257c2e42b54522e2f1976e53ea4b44
         }
     }
 
     void Deal()
     {
+<<<<<<< HEAD
         int totalCards = deck.Count;
         int cardsPerPlayer = totalCards / 2;
 
@@ -72,6 +92,20 @@ public class GameManager : MonoBehaviour
             Card value = deck[k];
             deck[k] = deck[n];
             deck[n] = value;
+=======
+        for (int i = 0; i < 5; i++) // Deal 5 cards to each player
+        {
+            if (deck.Count > 0)
+            {
+                player_hand.Add(deck[0]);
+                deck.RemoveAt(0);
+            }
+            if (deck.Count > 0)
+            {
+                ai_hand.Add(deck[0]);
+                deck.RemoveAt(0);
+            }
+>>>>>>> 9d83a41175257c2e42b54522e2f1976e53ea4b44
         }
     }
 
@@ -102,6 +136,7 @@ public class GameManager : MonoBehaviour
 
     void DetermineWinner(Card playerCard, Card aiCard)
     {
+<<<<<<< HEAD
         // Add your comparison logic here
         // Example: Compare card values and declare a winner
 
@@ -191,3 +226,8 @@ public class GameManager : MonoBehaviour
         }
     }
 }
+=======
+        // Implement AI's turn logic here
+    }
+}
+>>>>>>> 9d83a41175257c2e42b54522e2f1976e53ea4b44
