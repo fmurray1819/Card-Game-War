@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c025b4487bfbb41fca186c7d9d6e18a5, type: 3}
   m_Name: Two_Diamond
   m_EditorClassIdentifier: 
-  Number: {fileID: 0}
-  Number2: {fileID: 0}
-  Suit: {fileID: 0}
-  value: 0
+  Number: {fileID: 21300000, guid: 30708d93419904982b251744c8503965, type: 3}
+  Number2: {fileID: 21300000, guid: 30708d93419904982b251744c8503965, type: 3}
+  Suit: {fileID: 21300000, guid: 78b54fa4f10034be98eb642ce07e650c, type: 3}
+  value: 2
