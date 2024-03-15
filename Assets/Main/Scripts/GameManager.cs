@@ -13,9 +13,9 @@ public class GameManager : MonoBehaviour
     public List<Card> player_discard = new List<Card>();
     public List<Card> ai_discard = new List<Card>();
 
-    public Transform _canvas;
+    //public Transform _canvas;
 
-    private float offset;
+    //private float offset;
 
     private void Awake()
     {
@@ -32,7 +32,7 @@ public class GameManager : MonoBehaviour
     
     void Start()
     {
-        offset = 250;
+        //offset = 250;
         // Shuffle the deck
         Shuffle();
 
@@ -51,13 +51,11 @@ public class GameManager : MonoBehaviour
 
     void Deal()
     {
+        /*
         for (int i = 0; i <= deck.Count/2; i++)
         {
             int cardNumber = Random.Range(0, deck.Count);
-            
-            
-                Card current = Instantiate(deck[cardNumber], new Vector3(-750 + offset, 600, 0),
-                    quaternion.identity);
+                Card current = Instantiate(deck[cardNumber], new Vector3(-750 + offset, 600, 0), quaternion.identity);
                 current.transform.SetParent(_canvas);
                 player_deck.Add(current);
                 deck.RemoveAt(cardNumber);
@@ -70,23 +68,22 @@ public class GameManager : MonoBehaviour
             ai_deck.Add(deck[i]);
             deck.RemoveAt(i);
         }
-
-        /*
+        */
         int totalCards = deck.Count;
         int cardsPerPlayer = totalCards / 2;
 
         for (int i = 0; i < cardsPerPlayer; i++)
         {
             // Deal to the player
-            player_deck.Add(deck[i]);
-            deck.RemoveAt(i);
+            player_deck.Add(deck[0]);
+            deck.RemoveAt(0);
 
             // Deal to the AI
             ai_deck.Add(deck[0]);
             deck.RemoveAt(0);
         }
 
-        */
+        
     }
 
     void Shuffle()
