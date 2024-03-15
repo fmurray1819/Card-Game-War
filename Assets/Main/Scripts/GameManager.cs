@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Mathematics;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class GameManager : MonoBehaviour
 {
@@ -10,6 +12,10 @@ public class GameManager : MonoBehaviour
     public List<Card> ai_deck = new List<Card>();
     public List<Card> player_discard = new List<Card>();
     public List<Card> ai_discard = new List<Card>();
+
+    public Transform _canvas;
+
+    private float offset;
 
     private void Awake()
     {
@@ -23,62 +29,64 @@ public class GameManager : MonoBehaviour
             DontDestroyOnLoad(this.gameObject);
         }
     }
-
-    // Start is called before the first frame update
+    
     void Start()
     {
-<<<<<<< HEAD
+        offset = 250;
         // Shuffle the deck
         Shuffle();
 
         // Deal cards to players
-=======
-        CreateDeck();
-        Shuffle(deck);
->>>>>>> 9d83a41175257c2e42b54522e2f1976e53ea4b44
         Deal();
     }
-
-    void CreateDeck()
+    
+    void Update()
     {
-<<<<<<< HEAD
         // Check for the spacebar input
         if (Input.GetKeyDown(KeyCode.Space))
         {
             Play();
-=======
-        // Populate the deck with cards
-        // You should implement your logic to create the deck here
-    }
-
-    void Shuffle(List<Card> deckToShuffle)
-    {
-        for (int i = 0; i < deckToShuffle.Count; i++)
-        {
-            Card temp = deckToShuffle[i];
-            int randomIndex = Random.Range(i, deckToShuffle.Count);
-            deckToShuffle[i] = deckToShuffle[randomIndex];
-            deckToShuffle[randomIndex] = temp;
->>>>>>> 9d83a41175257c2e42b54522e2f1976e53ea4b44
         }
     }
 
     void Deal()
     {
-<<<<<<< HEAD
+        for (int i = 0; i <= deck.Count/2; i++)
+        {
+            int cardNumber = Random.Range(0, deck.Count);
+            
+            
+                Card current = Instantiate(deck[cardNumber], new Vector3(-750 + offset, 600, 0),
+                    quaternion.identity);
+                current.transform.SetParent(_canvas);
+                player_deck.Add(current);
+                deck.RemoveAt(cardNumber);
+                offset += 275;
+            
+        }
+        Shuffle();
+        for (int i = 0; i < deck.Count+1; i++)
+        {
+            ai_deck.Add(deck[i]);
+            deck.RemoveAt(i);
+        }
+
+        /*
         int totalCards = deck.Count;
         int cardsPerPlayer = totalCards / 2;
 
         for (int i = 0; i < cardsPerPlayer; i++)
         {
             // Deal to the player
-            player_deck.Add(deck[0]);
-            deck.RemoveAt(0);
+            player_deck.Add(deck[i]);
+            deck.RemoveAt(i);
 
             // Deal to the AI
             ai_deck.Add(deck[0]);
             deck.RemoveAt(0);
         }
+
+        */
     }
 
     void Shuffle()
@@ -92,25 +100,11 @@ public class GameManager : MonoBehaviour
             Card value = deck[k];
             deck[k] = deck[n];
             deck[n] = value;
-=======
-        for (int i = 0; i < 5; i++) // Deal 5 cards to each player
-        {
-            if (deck.Count > 0)
-            {
-                player_hand.Add(deck[0]);
-                deck.RemoveAt(0);
-            }
-            if (deck.Count > 0)
-            {
-                ai_hand.Add(deck[0]);
-                deck.RemoveAt(0);
-            }
->>>>>>> 9d83a41175257c2e42b54522e2f1976e53ea4b44
         }
     }
 
     void Play()
-   {
+    {
         // Check if both players have at least one card in their deck
         if (player_deck.Count > 0 && ai_deck.Count > 0)
         {
@@ -136,7 +130,6 @@ public class GameManager : MonoBehaviour
 
     void DetermineWinner(Card playerCard, Card aiCard)
     {
-<<<<<<< HEAD
         // Add your comparison logic here
         // Example: Compare card values and declare a winner
 
@@ -162,7 +155,7 @@ public class GameManager : MonoBehaviour
     }
 
     void War()
-   {
+    {
         // Check if both players have at least one card in their deck
         if (player_deck.Count >= 4 && ai_deck.Count >= 4)
         {
@@ -226,8 +219,3 @@ public class GameManager : MonoBehaviour
         }
     }
 }
-=======
-        // Implement AI's turn logic here
-    }
-}
->>>>>>> 9d83a41175257c2e42b54522e2f1976e53ea4b44
