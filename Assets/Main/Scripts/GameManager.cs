@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using Unity.Mathematics;
 using UnityEngine;
 using Random = UnityEngine.Random;
@@ -13,9 +14,9 @@ public class GameManager : MonoBehaviour
     public List<Card> player_discard = new List<Card>();
     public List<Card> ai_discard = new List<Card>();
 
-    //public Transform _canvas;
+    public Transform _canvas;
 
-    //private float offset;
+    private float offset;
 
     private void Awake()
     {
@@ -32,7 +33,7 @@ public class GameManager : MonoBehaviour
     
     void Start()
     {
-        //offset = 250;
+        offset = 250;
         // Shuffle the deck
         Shuffle();
 
@@ -51,39 +52,31 @@ public class GameManager : MonoBehaviour
 
     void Deal()
     {
-        /*
-        for (int i = 0; i <= deck.Count/2; i++)
+        int handSize = deck.Count / 2;
+        for (int i = 0; i < handSize; i++)
         {
+            print(deck.Count + " " + i);
             int cardNumber = Random.Range(0, deck.Count);
-                Card current = Instantiate(deck[cardNumber], new Vector3(-750 + offset, 600, 0), quaternion.identity);
-                current.transform.SetParent(_canvas);
-                player_deck.Add(current);
-                deck.RemoveAt(cardNumber);
-                offset += 275;
-            
+            Card current = Instantiate(deck[cardNumber], new Vector3(-750 + offset, 600, 0), quaternion.identity);
+            current.transform.SetParent(_canvas);
+            player_deck.Add(current);
+            deck.RemoveAt(cardNumber);
+            offset += 275;
+
         }
+
         Shuffle();
-        for (int i = 0; i < deck.Count+1; i++)
+        for (int i = 0; i < handSize; i++)
         {
-            ai_deck.Add(deck[i]);
-            deck.RemoveAt(i);
-        }
-        */
-        int totalCards = deck.Count;
-        int cardsPerPlayer = totalCards / 2;
+            print("handsize" + handSize + "  " + i);
 
-        for (int i = 0; i < cardsPerPlayer; i++)
-        {
-            // Deal to the player
-            player_deck.Add(deck[0]);
-            deck.RemoveAt(0);
 
-            // Deal to the AI
-            ai_deck.Add(deck[0]);
-            deck.RemoveAt(0);
+            Card ai_current = deck[i];
+            ai_deck.Add(ai_current);
+
         }
 
-        
+        deck.Clear();
     }
 
     void Shuffle()
@@ -102,6 +95,8 @@ public class GameManager : MonoBehaviour
 
     void Play()
     {
+        
+        
         // Check if both players have at least one card in their deck
         if (player_deck.Count > 0 && ai_deck.Count > 0)
         {
@@ -112,6 +107,14 @@ public class GameManager : MonoBehaviour
 
             // Play the first card from the AI's deck
             Card aiCard = ai_deck[0];
+            
+            
+            //this will "flip" the card over by getting the back and turning it off
+            //aiCard.transform.GetChild(4).gameObject.SetActive(false);
+            
+            
+            
+            
             ai_deck.RemoveAt(0);
             Debug.Log("AI plays: " + aiCard.name);
 

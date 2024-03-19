@@ -16,3 +16,4 @@ MonoBehaviour:
   Number2: {fileID: 21300000, guid: 1c671b729057f4befa10409be9498a71, type: 3}
   Suit: {fileID: 21300000, guid: 4af0cbe74e41a4e309ad9ab85d741706, type: 3}
   value: 6
+  backside: {fileID: 21300000, guid: d3cc34a915409431db5b0c0ba97eb4c0, type: 3}

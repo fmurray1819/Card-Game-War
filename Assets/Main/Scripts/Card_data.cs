@@ -10,5 +10,6 @@ public class Card_data : ScriptableObject
     public Sprite Number2;
     public Sprite Suit;
     public int value;
-  
+    public Sprite backside;
+
 }

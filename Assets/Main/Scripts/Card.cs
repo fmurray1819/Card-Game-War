@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using Unity.Mathematics;
 using UnityEngine.UI;
 
 public class Card : MonoBehaviour
@@ -12,6 +13,7 @@ public class Card : MonoBehaviour
     public Image NumberTwo;
     public Image Suit;
     public int value;
+    public Image backside;
    
     // Start is called before the first frame update
     void Start()
@@ -21,6 +23,7 @@ public class Card : MonoBehaviour
         Suit.sprite = data.Suit;
         value = data.value;
         
+        backside.sprite = data.backside;
     }
 
     // Update is called once per frame
