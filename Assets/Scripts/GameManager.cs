@@ -25,7 +25,6 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        CreateDeck();
         Shuffle(deck);
         Deal();
     }
@@ -53,12 +52,12 @@ public class GameManager : MonoBehaviour
         {
             if (deck.Count > 0)
             {
-                player_hand.Add(deck[0]);
+                player_deck.Add(deck[0]);
                 deck.RemoveAt(0);
             }
             if (deck.Count > 0)
             {
-                ai_hand.Add(deck[0]);
+                ai_deck.Add(deck[0]);
                 deck.RemoveAt(0);
             }
         }
