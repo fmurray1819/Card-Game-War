@@ -68,7 +68,7 @@ public class GameManager : MonoBehaviour
         
         for (int i = 0; i < handSize; i++)
         {
-            Card ai_current = Instantiate(deck[i], new Vector3(500 + offset, 0, 0), Quaternion.identity);
+            Card ai_current = Instantiate(deck[i], new Vector3(50 + offset, 800, 0), Quaternion.Euler(180,0,0));
             ai_deck.Add(ai_current);
             ai_current.transform.SetParent(_canvas);
             offset += 20;
