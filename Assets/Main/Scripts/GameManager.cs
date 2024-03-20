@@ -33,7 +33,7 @@ public class GameManager : MonoBehaviour
     
     void Start()
     {
-        offset = 250;
+        offset = 0;
         // Shuffle the deck
         Shuffle();
 
@@ -55,29 +55,27 @@ public class GameManager : MonoBehaviour
         int handSize = deck.Count / 2;
         for (int i = 0; i < handSize; i++)
         {
-            print(deck.Count + " " + i);
             int cardNumber = Random.Range(0, deck.Count);
-            Card current = Instantiate(deck[cardNumber], new Vector3(-750 + offset, 600, 0), quaternion.identity);
+            Card current = Instantiate(deck[cardNumber], new Vector3(-500 + offset, 0, 0), quaternion.identity);
             current.transform.SetParent(_canvas);
             player_deck.Add(current);
             deck.RemoveAt(cardNumber);
-            offset += 275;
-
+            offset += 20;
         }
 
+        offset = 0;
         Shuffle();
+        
         for (int i = 0; i < handSize; i++)
         {
-            print("handsize" + handSize + "  " + i);
-
-
-            Card ai_current = deck[i];
+            Card ai_current = Instantiate(deck[i], new Vector3(500 + offset, 0, 0), Quaternion.identity);
             ai_deck.Add(ai_current);
-
+            ai_current.transform.SetParent(_canvas);
+            offset += 20;
         }
-
         deck.Clear();
     }
+    
 
     void Shuffle()
     {
