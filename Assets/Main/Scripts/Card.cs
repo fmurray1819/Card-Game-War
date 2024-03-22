@@ -22,7 +22,6 @@ public class Card : MonoBehaviour
         NumberTwo.sprite = data.Number2;
         Suit.sprite = data.Suit;
         value = data.value;
-        
         backside.sprite = data.backside;
     }
 

@@ -8,16 +8,16 @@ using Random = UnityEngine.Random;
 public class GameManager : MonoBehaviour
 {
     public static GameManager gm;
+    private float offset;
+    // Lists
     public List<Card> deck = new List<Card>();
     public List<Card> player_deck = new List<Card>();
     public List<Card> ai_deck = new List<Card>();
-    public List<Card> player_discard = new List<Card>();
-    public List<Card> ai_discard = new List<Card>();
-
     public Transform _canvas;
-
-    private float offset;
-
+    // Define variables for card instantiation locations
+    public Vector3 playerCardSpawn = new Vector3(-500, 0, 0);
+    public Vector3 aiCardSpawn = new Vector3(50, 800, 0);
+    
     private void Awake()
     {
         if (gm != null && gm != this)
@@ -75,7 +75,6 @@ public class GameManager : MonoBehaviour
         }
         deck.Clear();
     }
-    
 
     void Shuffle()
     {
@@ -93,56 +92,52 @@ public class GameManager : MonoBehaviour
 
     void Play()
     {
-        
-        
         // Check if both players have at least one card in their deck
         if (player_deck.Count > 0 && ai_deck.Count > 0)
         {
             // Play the first card from the player's deck
             Card playerCard = player_deck[0];
+            playerCard.transform.position = playerCardSpawn;
+            playerCard.transform.GetChild(4).gameObject.SetActive(false);
             player_deck.RemoveAt(0);
             Debug.Log("Player plays: " + playerCard.name);
 
             // Play the first card from the AI's deck
             Card aiCard = ai_deck[0];
-            
-            
-            //this will "flip" the card over by getting the back and turning it off
-            //aiCard.transform.GetChild(4).gameObject.SetActive(false);
-            
-            
-            
-            
+            aiCard.transform.position = aiCardSpawn;
+            aiCard.transform.GetChild(4).gameObject.SetActive(false);
             ai_deck.RemoveAt(0);
             Debug.Log("AI plays: " + aiCard.name);
-
+            
             // Compare the cards and determine the winner based on your game's rules
             DetermineWinner(playerCard, aiCard);
         }
-        else
+        // Player Lost
+        if (player_deck.Count < 0)
         {
-            // Player ran out of cards and loses the game
             Debug.Log("You ran out of cards. You lose!");
+        }
+        // AI Lost
+        if (ai_deck.Count < 0)
+        {
+            Debug.Log("Your opponent ran out of cards. You win!");
         }
     }
 
     void DetermineWinner(Card playerCard, Card aiCard)
     {
-        // Add your comparison logic here
-        // Example: Compare card values and declare a winner
-
         if (playerCard.value > aiCard.value)
         {
             // Player wins, add both cards to player discard pile
-            player_discard.Add(playerCard);
-            player_discard.Add(aiCard);
+            player_deck.Add(playerCard);
+            player_deck.Add(aiCard);
             Debug.Log("Player wins the hand!");
         }
         else if (aiCard.value > playerCard.value)
         {
             // AI wins, add both cards to AI discard pile
-            ai_discard.Add(playerCard);
-            ai_discard.Add(aiCard);
+            ai_deck.Add(playerCard);
+            ai_deck.Add(aiCard);
             Debug.Log("AI wins the hand!");
         }
         else
@@ -150,8 +145,10 @@ public class GameManager : MonoBehaviour
             // It's a tie, initiate a war
             War();
         }
+        
     }
 
+    
     void War()
     {
         // Check if both players have at least one card in their deck
@@ -178,18 +175,20 @@ public class GameManager : MonoBehaviour
             player_deck.RemoveRange(0, 4);
             ai_deck.RemoveRange(0, 4);
         }
-        else
+        // Player Lost
+        if (player_deck.Count < 4)
         {
-            // Player ran out of cards and loses the game
             Debug.Log("You ran out of cards. You lose!");
+        }
+        // AI Lost
+        if (ai_deck.Count < 4)
+        {
+            Debug.Log("Your opponent ran out of cards. You win!");
         }
     }
 
     void DetermineWarWinner(List<Card> playerWarCards, List<Card> aiWarCards)
     {
-        // Add your war comparison logic here
-        // Example: Compare the fourth cards and declare a winner
-
         Card playerFourthCard = playerWarCards[3];
         Card aiFourthCard = aiWarCards[3];
 
@@ -199,21 +198,21 @@ public class GameManager : MonoBehaviour
         if (playerFourthCard.value > aiFourthCard.value)
         {
             // Player wins the war, add all cards to player discard pile
-            player_discard.AddRange(playerWarCards);
-            player_discard.AddRange(aiWarCards);
+            player_deck.AddRange(playerWarCards);
+            player_deck.AddRange(aiWarCards);
             Debug.Log("Player wins the war!");
         }
         else if (aiFourthCard.value > playerFourthCard.value)
         {
             // AI wins the war, add all cards to AI discard pile
-            ai_discard.AddRange(playerWarCards);
-            ai_discard.AddRange(aiWarCards);
+            ai_deck.AddRange(playerWarCards);
+            ai_deck.AddRange(aiWarCards);
             Debug.Log("AI wins the war!");
         }
         else
         {
-            // War continues or specific rules apply
-            Debug.Log("War results in another tie or specific rules apply.");
+            War();
         }
     }
+    
 }
