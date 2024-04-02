@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using Unity.Mathematics;
+using UnityEditor;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -17,7 +18,8 @@ public class GameManager : MonoBehaviour
     // Define variables for card instantiation locations
     public Vector3 playerCardSpawn = new Vector3(-500, 0, 0);
     public Vector3 aiCardSpawn = new Vector3(50, 800, 0);
-    
+    private int time;
+    private int ogtime;
     private void Awake()
     {
         if (gm != null && gm != this)
@@ -33,12 +35,15 @@ public class GameManager : MonoBehaviour
     
     void Start()
     {
-        offset = 0;
+        //offset = 0;
         // Shuffle the deck
         Shuffle();
 
         // Deal cards to players
         Deal();
+        
+        //Timer
+        ogtime = 3
     }
     
     void Update()
@@ -56,22 +61,22 @@ public class GameManager : MonoBehaviour
         for (int i = 0; i < handSize; i++)
         {
             int cardNumber = Random.Range(0, deck.Count);
-            Card current = Instantiate(deck[cardNumber], new Vector3(-500 + offset, 0, 0), quaternion.identity);
+            Card current = Instantiate(deck[cardNumber], new Vector3(-500, 0, 0), quaternion.identity);
             current.transform.SetParent(_canvas);
             player_deck.Add(current);
             deck.RemoveAt(cardNumber);
-            offset += 20;
+            //offset += 20;
         }
 
-        offset = 0;
+        //offset = 0;
         Shuffle();
         
         for (int i = 0; i < handSize; i++)
         {
-            Card ai_current = Instantiate(deck[i], new Vector3(450 + offset, 1080, 0), Quaternion.Euler(180,0,0));
+            Card ai_current = Instantiate(deck[i], new Vector3(900, 1080, 0), Quaternion.Euler(180,0,0));
             ai_deck.Add(ai_current);
             ai_current.transform.SetParent(_canvas);
-            offset += 20;
+            //offset += 20;
         }
         deck.Clear();
     }
@@ -100,27 +105,28 @@ public class GameManager : MonoBehaviour
             playerCard.transform.position = playerCardSpawn;
             playerCard.transform.GetChild(4).gameObject.SetActive(false);
             player_deck.RemoveAt(0);
-            Debug.Log("Player plays: " + playerCard.name);
+            print("Player plays: " + playerCard.name);
 
             // Play the first card from the AI's deck
             Card aiCard = ai_deck[0];
             aiCard.transform.position = aiCardSpawn;
             aiCard.transform.GetChild(4).gameObject.SetActive(false);
             ai_deck.RemoveAt(0);
-            Debug.Log("AI plays: " + aiCard.name);
+            print("AI plays: " + aiCard.name);
             
             // Compare the cards and determine the winner based on your game's rules
-            DetermineWinner(playerCard, aiCard);
+            
+                DetermineWinner(playerCard, aiCard);
         }
         // Player Lost
         if (player_deck.Count < 0)
         {
-            Debug.Log("You ran out of cards. You lose!");
+            print("You ran out of cards. You lose!");
         }
         // AI Lost
         if (ai_deck.Count < 0)
         {
-            Debug.Log("Your opponent ran out of cards. You win!");
+            print("Your opponent ran out of cards. You win!");
         }
     }
 
@@ -129,16 +135,20 @@ public class GameManager : MonoBehaviour
         if (playerCard.value > aiCard.value)
         {
             // Player wins, add both cards to player discard pile
+            playerCard.transform.GetChild(4).gameObject.SetActive(true);
+            aiCard.transform.GetChild(4).gameObject.SetActive(true);
             player_deck.Add(playerCard);
             player_deck.Add(aiCard);
-            Debug.Log("Player wins the hand!");
+            print("Player wins the hand!");
         }
         else if (aiCard.value > playerCard.value)
         {
             // AI wins, add both cards to AI discard pile
+            playerCard.transform.GetChild(4).gameObject.SetActive(true);
+            aiCard.transform.GetChild(4).gameObject.SetActive(true);
             ai_deck.Add(playerCard);
             ai_deck.Add(aiCard);
-            Debug.Log("AI wins the hand!");
+            print("AI wins the hand!");
         }
         else
         {
@@ -158,14 +168,14 @@ public class GameManager : MonoBehaviour
             List<Card> playerWarCards = player_deck.GetRange(0, 4);
             foreach (Card card in playerWarCards)
             {
-                Debug.Log("Player's card in war: " + card.name);
+                print("Player's card in war: " + card.name);
             }
 
             // Play all cards from the AI's deck
             List<Card> aiWarCards = ai_deck.GetRange(0, 4);
             foreach (Card card in aiWarCards)
             {
-                Debug.Log("AI's card in war: " + card.name);
+                print("AI's card in war: " + card.name);
             }
 
             // Determine the winner based on specific war rules
@@ -178,12 +188,12 @@ public class GameManager : MonoBehaviour
         // Player Lost
         if (player_deck.Count < 4)
         {
-            Debug.Log("You ran out of cards. You lose!");
+            print("You ran out of cards. You lose!");
         }
         // AI Lost
         if (ai_deck.Count < 4)
         {
-            Debug.Log("Your opponent ran out of cards. You win!");
+            print("Your opponent ran out of cards. You win!");
         }
     }
 
@@ -192,22 +202,22 @@ public class GameManager : MonoBehaviour
         Card playerFourthCard = playerWarCards[3];
         Card aiFourthCard = aiWarCards[3];
 
-        Debug.Log("Player's fourth card in war: " + playerFourthCard.name);
-        Debug.Log("AI's fourth card in war: " + aiFourthCard.name);
+        print("Player's fourth card in war: " + playerFourthCard.name);
+        print("AI's fourth card in war: " + aiFourthCard.name);
 
         if (playerFourthCard.value > aiFourthCard.value)
         {
             // Player wins the war, add all cards to player discard pile
             player_deck.AddRange(playerWarCards);
             player_deck.AddRange(aiWarCards);
-            Debug.Log("Player wins the war!");
+            print("Player wins the war!");
         }
         else if (aiFourthCard.value > playerFourthCard.value)
         {
             // AI wins the war, add all cards to AI discard pile
             ai_deck.AddRange(playerWarCards);
             ai_deck.AddRange(aiWarCards);
-            Debug.Log("AI wins the war!");
+            print("AI wins the war!");
         }
         else
         {
