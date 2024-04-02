@@ -18,8 +18,8 @@ public class GameManager : MonoBehaviour
     // Define variables for card instantiation locations
     public Vector3 playerCardSpawn = new Vector3(-500, 0, 0);
     public Vector3 aiCardSpawn = new Vector3(50, 800, 0);
-    private int time;
-    private int ogtime;
+    private float time;
+    private float ogtime;
     private void Awake()
     {
         if (gm != null && gm != this)
@@ -43,15 +43,19 @@ public class GameManager : MonoBehaviour
         Deal();
         
         //Timer
-        ogtime = 3
+        ogtime = 3f;
+        time = ogtime;
     }
     
     void Update()
     {
         // Check for the spacebar input
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (time == 3)
         {
-            Play();
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                Play();
+            }
         }
     }
 
@@ -115,8 +119,13 @@ public class GameManager : MonoBehaviour
             print("AI plays: " + aiCard.name);
             
             // Compare the cards and determine the winner based on your game's rules
-            
+            time -= Time.deltaTime;
+            if (time < 0)
+            {
+                time = ogtime;
                 DetermineWinner(playerCard, aiCard);
+            }
+      
         }
         // Player Lost
         if (player_deck.Count < 0)
