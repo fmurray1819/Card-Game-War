@@ -123,17 +123,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!114 &303558834 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 7155584580668028252, guid: 3839e7102638b4f1bbf89cf682b25993, type: 3}
-  m_PrefabInstance: {fileID: 1145155833189554247}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -328,37 +317,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &656814575
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 656814576}
-  m_Layer: 0
-  m_Name: CHANGE CARD TO CARD BACK IN CANVAS
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &656814576
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 656814575}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5450.528, y: 663.83966, z: 38.687542}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1284887783
 GameObject:
   m_ObjectHideFlags: 0
@@ -490,6 +448,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6719051708243888313, guid: 3b46fea8680e64a678a5aff06d2c1608, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: d3cc34a915409431db5b0c0ba97eb4c0, type: 3}
     - target: {fileID: 6745593334577223654, guid: 3b46fea8680e64a678a5aff06d2c1608, type: 3}
       propertyPath: m_Name
       value: Eight_Sade
@@ -551,6 +513,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3296761912834620238, guid: 3e4878a2c232543b4ad700240712400b, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: d3cc34a915409431db5b0c0ba97eb4c0, type: 3}
     - target: {fileID: 6193713639810179587, guid: 3e4878a2c232543b4ad700240712400b, type: 3}
       propertyPath: m_Name
       value: Six_Spade
@@ -572,6 +538,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Three_Spade
       objectReference: {fileID: 0}
+    - target: {fileID: 817371470722503139, guid: 443ad1a5cfadd4b8c82d366d7b0041a8, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: d3cc34a915409431db5b0c0ba97eb4c0, type: 3}
     - target: {fileID: 5559734787733975158, guid: 443ad1a5cfadd4b8c82d366d7b0041a8, type: 3}
       propertyPath: m_LocalPosition.x
       value: -1895.77
@@ -669,6 +639,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4039037647139615339, guid: 353c108045bf8415f94dadefb66e42c3, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: d3cc34a915409431db5b0c0ba97eb4c0, type: 3}
     - target: {fileID: 6834926476368975829, guid: 353c108045bf8415f94dadefb66e42c3, type: 3}
       propertyPath: m_Name
       value: King_DIamond
@@ -690,6 +664,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 4002591297304670402}
     m_Modifications:
+    - target: {fileID: 622146528791004212, guid: 47d0982566900466093c9bf317e5e3e2, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: d3cc34a915409431db5b0c0ba97eb4c0, type: 3}
     - target: {fileID: 1765127424444641893, guid: 47d0982566900466093c9bf317e5e3e2, type: 3}
       propertyPath: m_LocalPosition.x
       value: -1895.77
@@ -1015,6 +993,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Jack_Spade
       objectReference: {fileID: 0}
+    - target: {fileID: 4315111688943108594, guid: 1d9e021f4f5424e669b58dc3831cf13f, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: d3cc34a915409431db5b0c0ba97eb4c0, type: 3}
     - target: {fileID: 5352204655866523606, guid: 1d9e021f4f5424e669b58dc3831cf13f, type: 3}
       propertyPath: backside
       value: 
@@ -1116,6 +1098,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7747859650981476887, guid: 0dd827828c054440ba0d2a7d70a45cd1, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: d3cc34a915409431db5b0c0ba97eb4c0, type: 3}
     - target: {fileID: 8080759473136890322, guid: 0dd827828c054440ba0d2a7d70a45cd1, type: 3}
       propertyPath: backside
       value: 
@@ -1133,6 +1119,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 4002591297304670402}
     m_Modifications:
+    - target: {fileID: 2238493158174624318, guid: 93729284a05bd4860a0339a8b085036a, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: d3cc34a915409431db5b0c0ba97eb4c0, type: 3}
     - target: {fileID: 4163002132133797454, guid: 93729284a05bd4860a0339a8b085036a, type: 3}
       propertyPath: m_Name
       value: King_Heart
@@ -1238,6 +1228,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7155584580668028252, guid: 3839e7102638b4f1bbf89cf682b25993, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: d3cc34a915409431db5b0c0ba97eb4c0, type: 3}
     - target: {fileID: 7526078586117779187, guid: 3839e7102638b4f1bbf89cf682b25993, type: 3}
       propertyPath: backside
       value: 
@@ -1303,6 +1297,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9075508671297047629, guid: 98519eb75afbb4f32a628ff2e711b137, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: d3cc34a915409431db5b0c0ba97eb4c0, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1385,6 +1383,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Seven_Heart
       objectReference: {fileID: 0}
+    - target: {fileID: 1917725408441828931, guid: 654223db63a41434c9b841fd8bae07f9, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: d3cc34a915409431db5b0c0ba97eb4c0, type: 3}
     - target: {fileID: 5463114670250559947, guid: 654223db63a41434c9b841fd8bae07f9, type: 3}
       propertyPath: backside
       value: 
@@ -1490,6 +1492,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: King_Spade
       objectReference: {fileID: 0}
+    - target: {fileID: 6921363926327458853, guid: a1c254c2f586b4dbc9808586b8dc8f32, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: d3cc34a915409431db5b0c0ba97eb4c0, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1514,7 +1520,7 @@ PrefabInstance:
     - target: {fileID: 2951555242487545845, guid: e283f2d6b1fec482e9de621e3fae3801, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 21300000, guid: d3cc34a915409431db5b0c0ba97eb4c0, type: 3}
     - target: {fileID: 4682087751559458407, guid: e283f2d6b1fec482e9de621e3fae3801, type: 3}
       propertyPath: m_LocalPosition.x
       value: -1895.77
@@ -1633,6 +1639,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 4002591297304670402}
     m_Modifications:
+    - target: {fileID: 788848334818330142, guid: a8ed4f30378ed4de7bfe1fb5a6c177fe, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: d3cc34a915409431db5b0c0ba97eb4c0, type: 3}
     - target: {fileID: 2114473531399866951, guid: a8ed4f30378ed4de7bfe1fb5a6c177fe, type: 3}
       propertyPath: m_Name
       value: King_Club
@@ -1694,6 +1704,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 4002591297304670402}
     m_Modifications:
+    - target: {fileID: 1939387703470588341, guid: 23198e2e3606644bda18709cee7f507b, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: d3cc34a915409431db5b0c0ba97eb4c0, type: 3}
     - target: {fileID: 6549570072934871375, guid: 23198e2e3606644bda18709cee7f507b, type: 3}
       propertyPath: backside
       value: 
@@ -1803,6 +1817,10 @@ PrefabInstance:
       propertyPath: backside
       value: 
       objectReference: {fileID: 1432146333}
+    - target: {fileID: 8372393046681386517, guid: f2cb697ae9fb9442aab221f3e42f1889, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: d3cc34a915409431db5b0c0ba97eb4c0, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1856,6 +1874,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4593087981946915480, guid: 63784a87cbb9c417694b71fd2351113f, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: d3cc34a915409431db5b0c0ba97eb4c0, type: 3}
     - target: {fileID: 6210227840824631949, guid: 63784a87cbb9c417694b71fd2351113f, type: 3}
       propertyPath: m_Name
       value: Five_Spade
@@ -1877,6 +1899,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 4002591297304670402}
     m_Modifications:
+    - target: {fileID: 2249051099257356448, guid: 73e1f136eb904437bbebcb8e9948dd92, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: d3cc34a915409431db5b0c0ba97eb4c0, type: 3}
     - target: {fileID: 3965508585086824651, guid: 73e1f136eb904437bbebcb8e9948dd92, type: 3}
       propertyPath: m_LocalPosition.x
       value: -1895.77
@@ -1986,6 +2012,10 @@ PrefabInstance:
       propertyPath: backside
       value: 
       objectReference: {fileID: 1432146333}
+    - target: {fileID: 7481428308904024223, guid: 17bc65ac58f0449b193bb531f174c805, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: d3cc34a915409431db5b0c0ba97eb4c0, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2047,6 +2077,10 @@ PrefabInstance:
       propertyPath: backside
       value: 
       objectReference: {fileID: 1432146333}
+    - target: {fileID: 7547270874919670756, guid: a00d508322950437cba0f68dc01ee7a5, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: d3cc34a915409431db5b0c0ba97eb4c0, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2969,6 +3003,10 @@ PrefabInstance:
       propertyPath: backside
       value: 
       objectReference: {fileID: 1432146333}
+    - target: {fileID: 3587994025129624362, guid: 9ff8a340295e64645910915c2056743c, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: d3cc34a915409431db5b0c0ba97eb4c0, type: 3}
     - target: {fileID: 5495554336251876700, guid: 9ff8a340295e64645910915c2056743c, type: 3}
       propertyPath: m_Name
       value: Ten_Spade
@@ -2989,7 +3027,7 @@ PrefabInstance:
     - target: {fileID: 1697110944557921525, guid: 0e7ba389fe46e4494ae4b0435a542310, type: 3}
       propertyPath: backside
       value: 
-      objectReference: {fileID: 303558834}
+      objectReference: {fileID: 1432146333}
     - target: {fileID: 3126836056647123479, guid: 0e7ba389fe46e4494ae4b0435a542310, type: 3}
       propertyPath: m_Name
       value: Ace_Club
@@ -3099,6 +3137,10 @@ PrefabInstance:
       propertyPath: backside
       value: 
       objectReference: {fileID: 1432146333}
+    - target: {fileID: 6564990041925289433, guid: ccb54257fb1004fdb93f316fd43b0f56, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: d3cc34a915409431db5b0c0ba97eb4c0, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3160,6 +3202,10 @@ PrefabInstance:
       propertyPath: backside
       value: 
       objectReference: {fileID: 1432146333}
+    - target: {fileID: 8554785443148030028, guid: b651ac12eabe4420ba8eedb3efd36127, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: d3cc34a915409431db5b0c0ba97eb4c0, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3177,6 +3223,10 @@ PrefabInstance:
       propertyPath: backside
       value: 
       objectReference: {fileID: 1432146333}
+    - target: {fileID: 4456564208779363520, guid: d01f655c749d54fd4b76c8eac03c0252, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: d3cc34a915409431db5b0c0ba97eb4c0, type: 3}
     - target: {fileID: 5923620703249261567, guid: d01f655c749d54fd4b76c8eac03c0252, type: 3}
       propertyPath: m_Name
       value: Nine_Heart
@@ -3242,6 +3292,10 @@ PrefabInstance:
       propertyPath: backside
       value: 
       objectReference: {fileID: 1432146333}
+    - target: {fileID: 5858361919366343995, guid: 6a06193e6e6634bf18fc4152c531aca8, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: d3cc34a915409431db5b0c0ba97eb4c0, type: 3}
     - target: {fileID: 8642848720065567037, guid: 6a06193e6e6634bf18fc4152c531aca8, type: 3}
       propertyPath: m_LocalPosition.x
       value: -1895.77
@@ -3295,6 +3349,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 4002591297304670402}
     m_Modifications:
+    - target: {fileID: 3352432834760782809, guid: 0b5e795fb24d34d89b32e3cd1e8ba0d1, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: d3cc34a915409431db5b0c0ba97eb4c0, type: 3}
     - target: {fileID: 4556139203942111314, guid: 0b5e795fb24d34d89b32e3cd1e8ba0d1, type: 3}
       propertyPath: m_Name
       value: Queen_Club
@@ -3400,6 +3458,10 @@ PrefabInstance:
       propertyPath: backside
       value: 
       objectReference: {fileID: 1432146333}
+    - target: {fileID: 6051316428633590580, guid: 3f94a436e0c134329b442e902cff7eff, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: d3cc34a915409431db5b0c0ba97eb4c0, type: 3}
     - target: {fileID: 7130808922895697956, guid: 3f94a436e0c134329b442e902cff7eff, type: 3}
       propertyPath: m_Name
       value: Six_Diamond
@@ -3421,6 +3483,10 @@ PrefabInstance:
       propertyPath: backside
       value: 
       objectReference: {fileID: 1432146333}
+    - target: {fileID: 3309777621450429220, guid: ee27d592fc8e2482b98dfd3946f22667, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: d3cc34a915409431db5b0c0ba97eb4c0, type: 3}
     - target: {fileID: 3459320981160521189, guid: ee27d592fc8e2482b98dfd3946f22667, type: 3}
       propertyPath: m_LocalPosition.x
       value: -1895.77
@@ -3547,6 +3613,10 @@ PrefabInstance:
       propertyPath: backside
       value: 
       objectReference: {fileID: 1432146333}
+    - target: {fileID: 3213824459681712997, guid: a37d2230f413c4251a69793ba2988aab, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: d3cc34a915409431db5b0c0ba97eb4c0, type: 3}
     - target: {fileID: 4382020831908357074, guid: a37d2230f413c4251a69793ba2988aab, type: 3}
       propertyPath: m_Name
       value: Nine_Spade
@@ -3608,6 +3678,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Seven_Diamond
       objectReference: {fileID: 0}
+    - target: {fileID: 5837454024830241538, guid: a9f66157bca874b199e2e14e713b43fc, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: d3cc34a915409431db5b0c0ba97eb4c0, type: 3}
     - target: {fileID: 6780288368281805012, guid: a9f66157bca874b199e2e14e713b43fc, type: 3}
       propertyPath: m_LocalPosition.x
       value: -1895.77
@@ -3669,6 +3743,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Queen_Spade
       objectReference: {fileID: 0}
+    - target: {fileID: 6309397243838674660, guid: e9e34207ab08646d8ab239c8648d3d5e, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: d3cc34a915409431db5b0c0ba97eb4c0, type: 3}
     - target: {fileID: 6405842787084212214, guid: e9e34207ab08646d8ab239c8648d3d5e, type: 3}
       propertyPath: backside
       value: 
@@ -3734,6 +3812,10 @@ PrefabInstance:
       propertyPath: backside
       value: 
       objectReference: {fileID: 1432146333}
+    - target: {fileID: 8274198002238043811, guid: 902328b57a2754048bdf6c99d8e4983c, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: d3cc34a915409431db5b0c0ba97eb4c0, type: 3}
     - target: {fileID: 8698147251705097253, guid: 902328b57a2754048bdf6c99d8e4983c, type: 3}
       propertyPath: m_LocalPosition.x
       value: -1895.77
@@ -3858,6 +3940,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9207674210972996057, guid: 60e8a54494d624c0f9fac4f0dc42f635, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: d3cc34a915409431db5b0c0ba97eb4c0, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3875,6 +3961,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Ten_Diamond
       objectReference: {fileID: 0}
+    - target: {fileID: 2258680718378451667, guid: 7a21626c3f6074820b65e7711694412a, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: d3cc34a915409431db5b0c0ba97eb4c0, type: 3}
     - target: {fileID: 3063005468067612761, guid: 7a21626c3f6074820b65e7711694412a, type: 3}
       propertyPath: m_LocalPosition.x
       value: -1895.77
@@ -3980,6 +4070,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6398758252419211911, guid: 1da46a3c75c3c47b38a84fcb1020190c, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: d3cc34a915409431db5b0c0ba97eb4c0, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -4033,6 +4127,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4247697074640377853, guid: 00b6e514d976a4c03a9d9f03be1d3693, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: d3cc34a915409431db5b0c0ba97eb4c0, type: 3}
     - target: {fileID: 5448229859279786748, guid: 00b6e514d976a4c03a9d9f03be1d3693, type: 3}
       propertyPath: backside
       value: 
@@ -4058,6 +4156,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Six_Heart
       objectReference: {fileID: 0}
+    - target: {fileID: 4627650340432829066, guid: a455bb00ee04046e188191f1ca1f2f7b, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: d3cc34a915409431db5b0c0ba97eb4c0, type: 3}
     - target: {fileID: 7699707909255052073, guid: a455bb00ee04046e188191f1ca1f2f7b, type: 3}
       propertyPath: backside
       value: 
@@ -4162,7 +4264,7 @@ PrefabInstance:
     - target: {fileID: 5914598007284579719, guid: feb0b4cbb79c245cd8f3f3be4ce1462b, type: 3}
       propertyPath: backside
       value: 
-      objectReference: {fileID: 1432146333}
+      objectReference: {fileID: 8022134533646312504}
     - target: {fileID: 8493086313505525220, guid: feb0b4cbb79c245cd8f3f3be4ce1462b, type: 3}
       propertyPath: m_Name
       value: Ace_Spade
@@ -4172,6 +4274,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: feb0b4cbb79c245cd8f3f3be4ce1462b, type: 3}
+--- !u!114 &8022134533646312504 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2883948135584581132, guid: feb0b4cbb79c245cd8f3f3be4ce1462b, type: 3}
+  m_PrefabInstance: {fileID: 8022134533646312503}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &8197740254289787191
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4180,6 +4293,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 4002591297304670402}
     m_Modifications:
+    - target: {fileID: 764887077289845574, guid: e1d9545b46db740b3a2c1eb53e77c9ff, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: d3cc34a915409431db5b0c0ba97eb4c0, type: 3}
     - target: {fileID: 1443917683948237573, guid: e1d9545b46db740b3a2c1eb53e77c9ff, type: 3}
       propertyPath: m_Name
       value: Queen_Heart
@@ -4289,6 +4406,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Four_Club
       objectReference: {fileID: 0}
+    - target: {fileID: 7182969168012913473, guid: a8345f422429a4cd59356123f6d80a9c, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: d3cc34a915409431db5b0c0ba97eb4c0, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -4302,6 +4423,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 4002591297304670402}
     m_Modifications:
+    - target: {fileID: 264727309222919627, guid: fa65508ef4c2c4615ada3f75cb7a6e90, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: d3cc34a915409431db5b0c0ba97eb4c0, type: 3}
     - target: {fileID: 2082966844251814156, guid: fa65508ef4c2c4615ada3f75cb7a6e90, type: 3}
       propertyPath: backside
       value: 
@@ -4424,6 +4549,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8291228876847182444, guid: 50fe9a8f1134947adb4732f5878e4e0b, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: d3cc34a915409431db5b0c0ba97eb4c0, type: 3}
     - target: {fileID: 9033511688275541147, guid: 50fe9a8f1134947adb4732f5878e4e0b, type: 3}
       propertyPath: backside
       value: 
@@ -4444,7 +4573,7 @@ PrefabInstance:
     - target: {fileID: 588316952223001764, guid: ab1db7e84328d48618412a22227d95b3, type: 3}
       propertyPath: backside
       value: 
-      objectReference: {fileID: 1432146333}
+      objectReference: {fileID: 8782427859888897469}
     - target: {fileID: 1931431177170780088, guid: ab1db7e84328d48618412a22227d95b3, type: 3}
       propertyPath: m_Name
       value: Ace_Heart
@@ -4498,6 +4627,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ab1db7e84328d48618412a22227d95b3, type: 3}
+--- !u!114 &8782427859888897469 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4287595716037027928, guid: ab1db7e84328d48618412a22227d95b3, type: 3}
+  m_PrefabInstance: {fileID: 8782427859888897468}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &9217191015080489617
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4554,6 +4694,10 @@ PrefabInstance:
       propertyPath: backside
       value: 
       objectReference: {fileID: 1432146333}
+    - target: {fileID: 5956237330915365574, guid: 58b46894083504064a3951920beca87e, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: d3cc34a915409431db5b0c0ba97eb4c0, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -4607,6 +4751,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8518979572506000763, guid: 303c6b07acaca4aa6809d57e82ab5393, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: d3cc34a915409431db5b0c0ba97eb4c0, type: 3}
     - target: {fileID: 8800824650385517120, guid: 303c6b07acaca4aa6809d57e82ab5393, type: 3}
       propertyPath: m_Name
       value: Ten_Club
@@ -4628,4 +4776,3 @@ SceneRoots:
   - {fileID: 1284887786}
   - {fileID: 4002591297304670402}
   - {fileID: 622756966}
-  - {fileID: 656814576}
