@@ -68,7 +68,6 @@ public class GameManager : MonoBehaviour
         if (!timeIsStopped)
         {
             time -= Time.deltaTime;
-            print(time);
             if (time < 0)
             {
                 time = ogtime;
@@ -96,7 +95,7 @@ public class GameManager : MonoBehaviour
         
         for (int i = 0; i < handSize; i++)
         {
-            Card ai_current = Instantiate(deck[i], aiDeckSpawn, Quaternion.Euler(180,0,0));
+            Card ai_current = Instantiate(deck[i], aiDeckSpawn, quaternion.identity);
             ai_deck.Add(ai_current);
             ai_current.transform.SetParent(_canvas);
             //offset += 20;
@@ -157,6 +156,9 @@ public class GameManager : MonoBehaviour
         if (playerCard.value > aiCard.value)
         {
             // Player wins, add both cards to player discard pile
+            
+            playerCard.transform.position = playerDeckSpawn;
+            aiCard.transform.position = playerDeckSpawn;
             playerCard.transform.GetChild(4).gameObject.SetActive(true);
             aiCard.transform.GetChild(4).gameObject.SetActive(true);
             player_deck.Add(playerCard);
@@ -166,6 +168,8 @@ public class GameManager : MonoBehaviour
         else if (aiCard.value > playerCard.value)
         {
             // AI wins, add both cards to AI discard pile
+            playerCard.transform.position = aiDeckSpawn;
+            aiCard.transform.position = aiDeckSpawn;
             playerCard.transform.GetChild(4).gameObject.SetActive(true);
             aiCard.transform.GetChild(4).gameObject.SetActive(true);
             ai_deck.Add(playerCard);
@@ -230,6 +234,10 @@ public class GameManager : MonoBehaviour
         if (playerFourthCard.value > aiFourthCard.value)
         {
             // Player wins the war, add all cards to player discard pile
+            playerCard.transform.position = playerDeckSpawn;
+            aiCard.transform.position = playerDeckSpawn;
+            playerCard.transform.GetChild(4).gameObject.SetActive(true);
+            aiCard.transform.GetChild(4).gameObject.SetActive(true);
             player_deck.AddRange(playerWarCards);
             player_deck.AddRange(aiWarCards);
             print("Player wins the war!");
@@ -237,6 +245,10 @@ public class GameManager : MonoBehaviour
         else if (aiFourthCard.value > playerFourthCard.value)
         {
             // AI wins the war, add all cards to AI discard pile
+            playerCard.transform.position = aiDeckSpawn;
+            aiCard.transform.position = aiDeckSpawn;
+            playerCard.transform.GetChild(4).gameObject.SetActive(true);
+            aiCard.transform.GetChild(4).gameObject.SetActive(true);
             ai_deck.AddRange(playerWarCards);
             ai_deck.AddRange(aiWarCards);
             print("AI wins the war!");
