@@ -18,8 +18,13 @@ public class GameManager : MonoBehaviour
     // Define variables for card instantiation locations
     public Vector3 playerCardSpawn = new Vector3(-500, 0, 0);
     public Vector3 aiCardSpawn = new Vector3(50, 800, 0);
+    private Vector3 playerDeckSpawn = new Vector3(-500, 0, 0);
+    private Vector3 aiDeckSpawn = new Vector3(900, 1080, 0);
     private float time;
     private float ogtime;
+    private Card playerCard;
+    private Card aiCard;
+    private bool timeIsStopped = true;
     private void Awake()
     {
         if (gm != null && gm != this)
@@ -50,11 +55,25 @@ public class GameManager : MonoBehaviour
     void Update()
     {
         // Check for the spacebar input
-        if (time == 3)
+        if (time == 3 && timeIsStopped)
         {
             if (Input.GetKeyDown(KeyCode.Space))
             {
                 Play();
+                timeIsStopped = false;
+            }
+        }
+        
+        // Compare the cards and determine the winner based on your game's rules
+        if (!timeIsStopped)
+        {
+            time -= Time.deltaTime;
+            print(time);
+            if (time < 0)
+            {
+                time = ogtime;
+                timeIsStopped = true;
+                DetermineWinner(playerCard, aiCard);
             }
         }
     }
@@ -65,7 +84,7 @@ public class GameManager : MonoBehaviour
         for (int i = 0; i < handSize; i++)
         {
             int cardNumber = Random.Range(0, deck.Count);
-            Card current = Instantiate(deck[cardNumber], new Vector3(-500, 0, 0), quaternion.identity);
+            Card current = Instantiate(deck[cardNumber], playerDeckSpawn, quaternion.identity);
             current.transform.SetParent(_canvas);
             player_deck.Add(current);
             deck.RemoveAt(cardNumber);
@@ -77,7 +96,7 @@ public class GameManager : MonoBehaviour
         
         for (int i = 0; i < handSize; i++)
         {
-            Card ai_current = Instantiate(deck[i], new Vector3(900, 1080, 0), Quaternion.Euler(180,0,0));
+            Card ai_current = Instantiate(deck[i], aiDeckSpawn, Quaternion.Euler(180,0,0));
             ai_deck.Add(ai_current);
             ai_current.transform.SetParent(_canvas);
             //offset += 20;
@@ -105,26 +124,20 @@ public class GameManager : MonoBehaviour
         if (player_deck.Count > 0 && ai_deck.Count > 0)
         {
             // Play the first card from the player's deck
-            Card playerCard = player_deck[0];
+            playerCard = player_deck[0];
             playerCard.transform.position = playerCardSpawn;
             playerCard.transform.GetChild(4).gameObject.SetActive(false);
             player_deck.RemoveAt(0);
             print("Player plays: " + playerCard.name);
 
             // Play the first card from the AI's deck
-            Card aiCard = ai_deck[0];
+            aiCard = ai_deck[0];
             aiCard.transform.position = aiCardSpawn;
             aiCard.transform.GetChild(4).gameObject.SetActive(false);
             ai_deck.RemoveAt(0);
             print("AI plays: " + aiCard.name);
             
-            // Compare the cards and determine the winner based on your game's rules
-            time -= Time.deltaTime;
-            if (time < 0)
-            {
-                time = ogtime;
-                DetermineWinner(playerCard, aiCard);
-            }
+            
       
         }
         // Player Lost

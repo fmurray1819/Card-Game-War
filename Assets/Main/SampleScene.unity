@@ -384,8 +384,8 @@ MonoBehaviour:
   player_deck: []
   ai_deck: []
   _canvas: {fileID: 4002591297304670402}
-  playerCardSpawn: {x: -1127.5, y: 0, z: 0}
-  aiCardSpawn: {x: 50, y: 800, z: 0}
+  playerCardSpawn: {x: 200, y: 300, z: 0}
+  aiCardSpawn: {x: 200, y: 800, z: 0}
 --- !u!4 &622756966
 Transform:
   m_ObjectHideFlags: 0
